@@ -262,7 +262,7 @@ class TripDetailsPage extends GetView<TripDetailsController> {
               margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(
+                child: ListView.separated(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: AppMenus.detailMenu.length,
@@ -275,44 +275,14 @@ class TripDetailsPage extends GetView<TripDetailsController> {
                       dense: true,
                       horizontalTitleGap: 8,
                       minLeadingWidth: 0,
-                      onTap: () {},
-                      title: Text(menu.name),
-                      subtitle: Row(
-                        children: [
-                          Text(
-                            "data",
-                            style: TextStyle(color: AppColors.black),
-                          ),
-                          SizedBox(width: 8),
-                          Text(
-                            "data",
-                            style: TextStyle(color:  AppColors.red,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+                      onTap: () {
+                        Get.toNamed(menu.route);
+                      },
+                      title: Text(menu.title, style: TextStyle(color: AppColors.black, fontSize: 14, fontWeight: FontWeight.bold),),
+                      leading: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Image.asset(menu.icon, height: 26, width: 26,),
                       ),
-                      /*leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          height: 36,
-                          width: 36,
-                          color:
-                          Colors.primaries[member.name.hashCode %
-                              Colors.primaries.length], // random color
-                          alignment: Alignment.center,
-                          child: Text(
-                            member.name.isNotEmpty
-                                ? member.name[0].toUpperCase()
-                                : "?",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),*/
                       trailing: IconButton(
                         onPressed: () {
                           // Get.toNamed(
@@ -323,12 +293,15 @@ class TripDetailsPage extends GetView<TripDetailsController> {
                           //   },
                           // );
                         },
-                        icon: Icon(Icons.add, color: AppColors.primaryColor),
+                        icon: Icon(Icons.arrow_forward_ios, color: AppColors.black, size: 20,),
                         style: IconButton.styleFrom(
-                          backgroundColor: AppColors.backgroundColor,
+                          backgroundColor: AppColors.white,
                         ),
                       ),
                     );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider(height: 1, thickness: 1,); // separator widget
                   },
                 ),
               ),

@@ -69,6 +69,7 @@ class AddTripPage extends GetView<AddTripController> {
                         prefixIconColor: AppColors.primaryColor,
                         fillColor: AppColors.white,
                         // labelText: "Medicine Name",
+                        hintText: "Enter a name",
                         hintStyle: TextStyle(
                           color: Colors.black26,
                           fontSize: 14,
@@ -119,6 +120,7 @@ class AddTripPage extends GetView<AddTripController> {
                         prefixIconColor: AppColors.primaryColor,
                         fillColor: AppColors.white,
                         // labelText: "Medicine Name",
+                        hintText: "Enter a description",
                         hintStyle: TextStyle(
                           color: Colors.black26,
                           fontSize: 14,

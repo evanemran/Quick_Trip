@@ -1,12 +1,14 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:quick_trip/bindings/add_expense_binding.dart';
 import 'package:quick_trip/bindings/add_trip_binding.dart';
+import 'package:quick_trip/bindings/total_binding.dart';
 import 'package:quick_trip/bindings/trip_details_binding.dart';
 import 'package:quick_trip/pages/add_expense_page.dart';
 import 'package:quick_trip/pages/add_trip_page.dart';
 import 'package:quick_trip/pages/drawer_page.dart';
 import 'package:quick_trip/pages/home_page.dart';
 import 'package:quick_trip/pages/splash_page.dart';
+import 'package:quick_trip/pages/total_page.dart';
 import 'package:quick_trip/pages/trip_details_page.dart';
 
 import 'bindings/home_binding.dart';
@@ -20,6 +22,7 @@ class AppRoutes {
   static const String addNewPage = '/add_new_page';
   static const String tripDetailsPage = '/trip_details_page';
   static const String addExpensePage = '/add_expense_page';
+  static const String totalPage = '/total_page';
 
 
   static List<GetPage> pages = [
@@ -30,5 +33,6 @@ class AppRoutes {
     GetPage(name: addNewPage, page: () => AddTripPage(), bindings: [AddTripBinding()]),
     GetPage(name: tripDetailsPage, page: () => TripDetailsPage(), bindings: [TripDetailsBinding()]),
     GetPage(name: addExpensePage, page: () => AddExpensePage(), bindings: [AddExpenseBinding()]),
+    GetPage(name: totalPage, page: () => TotalPage(), bindings: [TotalBinding()]),
   ];
 }
