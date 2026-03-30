@@ -8,4 +8,8 @@ class AppStrings {
   static const alarms = "Notifications";
   static const policy = "Our Policy";
   static const settings = "Settings";
+  static const total = "Total";
+  static const summary = "Summary";
+  static const stats = "Stats";
+  static const details = "Details";
 }

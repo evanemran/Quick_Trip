@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:quick_trip/controllers/trip_details_controller.dart';
+import 'package:quick_trip/utils/app_menus.dart';
 
 import '../app_routes.dart';
 import '../utils/app_colors.dart';
@@ -178,7 +179,7 @@ class TripDetailsPage extends GetView<TripDetailsController> {
             ),
             Card(
               color: AppColors.white,
-              margin: EdgeInsets.all(16),
+              margin: EdgeInsets.fromLTRB(16, 16, 16, 8),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListView.builder(
@@ -244,6 +245,83 @@ class TripDetailsPage extends GetView<TripDetailsController> {
                               "member": member,
                             },
                           );
+                        },
+                        icon: Icon(Icons.add, color: AppColors.primaryColor),
+                        style: IconButton.styleFrom(
+                          backgroundColor: AppColors.backgroundColor,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+
+            Card(
+              color: AppColors.white,
+              margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: AppMenus.detailMenu.length,
+                  itemBuilder: (context, position) {
+                    var menu =
+                    AppMenus.detailMenu[position];
+
+                    return ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      dense: true,
+                      horizontalTitleGap: 8,
+                      minLeadingWidth: 0,
+                      onTap: () {},
+                      title: Text(menu.name),
+                      subtitle: Row(
+                        children: [
+                          Text(
+                            "data",
+                            style: TextStyle(color: AppColors.black),
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            "data",
+                            style: TextStyle(color:  AppColors.red,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      /*leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Container(
+                          height: 36,
+                          width: 36,
+                          color:
+                          Colors.primaries[member.name.hashCode %
+                              Colors.primaries.length], // random color
+                          alignment: Alignment.center,
+                          child: Text(
+                            member.name.isNotEmpty
+                                ? member.name[0].toUpperCase()
+                                : "?",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),*/
+                      trailing: IconButton(
+                        onPressed: () {
+                          // Get.toNamed(
+                          //   AppRoutes.addExpensePage,
+                          //   arguments: {
+                          //     "trip": controller.trip,
+                          //     "member": member,
+                          //   },
+                          // );
                         },
                         icon: Icon(Icons.add, color: AppColors.primaryColor),
                         style: IconButton.styleFrom(

@@ -15,6 +15,13 @@ class AppMenus {
     Menu.policy,
   ];
 
+  static const List<Menu> detailMenu = [
+    Menu.total,
+    Menu.summary,
+    Menu.stats,
+    Menu.details,
+  ];
+
 // static const List<Menu> bottomMenuList = [
 //   Menu.home,
 //   Menu.savings,
@@ -28,6 +35,10 @@ enum Menu{
   reports(AppStrings.report, AppImages.reportLogo, AppRoutes.homePage),
   policy(AppStrings.policy, AppImages.policyLogo, AppRoutes.homePage),
   settings(AppStrings.settings, AppImages.settingsLogo, AppRoutes.homePage),
+  total(AppStrings.total, AppImages.totalLogo, AppRoutes.homePage),
+  summary(AppStrings.summary, AppImages.summaryLogo, AppRoutes.homePage),
+  stats(AppStrings.stats, AppImages.statsLogo, AppRoutes.homePage),
+  details(AppStrings.details, AppImages.infoLogo, AppRoutes.homePage),
   alarms(AppStrings.alarms, AppImages.notificationsLogo, AppRoutes.homePage);
 
 

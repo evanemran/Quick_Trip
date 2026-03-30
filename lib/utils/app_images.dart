@@ -11,4 +11,8 @@ class AppImages {
   static const String reportLogo = "$IMAGE_PATH/file.png";
   static const String policyLogo = "$IMAGE_PATH/policy.png";
   static const String settingsLogo = "$IMAGE_PATH/setting.png";
+  static const String infoLogo = "$IMAGE_PATH/info.png";
+  static const String statsLogo = "$IMAGE_PATH/stats.png";
+  static const String summaryLogo = "$IMAGE_PATH/summary.png";
+  static const String totalLogo = "$IMAGE_PATH/total.png";
 }
