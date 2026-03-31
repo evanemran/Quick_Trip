@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
@@ -69,15 +70,21 @@ class TotalPage extends GetView<TotalController> {
           ),
           Padding(
               padding: EdgeInsets.all(8),
-            child: ListView.separated(
+            child: Obx(() => ListView.separated(
+              shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, position) {
-
+                  var expense = controller.expensesList[position];
+                  return ListTile(
+                    title: Text(expense.description),
+                    subtitle: Text(expense.category),
+                  );
                 },
                 separatorBuilder: (context, index) {
                   return Divider(height: 1, thickness: 1,); // separator widget
                 },
-                itemCount: 10
-            ),
+                itemCount: controller.expensesList.length
+            )),
           ),
         ],
       ),

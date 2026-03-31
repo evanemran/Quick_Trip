@@ -39,6 +39,7 @@ class AddExpenseController extends GetxController {
       );
 
       member.amountSpent += double.parse(expenseAmountController.text);
+      member.amountShared += (double.parse(expenseAmountController.text)) / trip.tripDetailModel.members.length;
       member.dueOrRefund = (member.deposit + member.amountSpent) - member.amountShared;
       member.expenses.add(
         Expense(
