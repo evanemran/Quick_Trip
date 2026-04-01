@@ -10,20 +10,18 @@ import '../models/trip_detail_model.dart';
 class TotalController extends GetxController {
 
   late TripModel trip;
-  var expensesList = <Expense>[].obs;
 
   @override
   void onInit() {
     super.onInit();
     trip = Get.arguments;
-    getExpensesList();
   }
 
-  void getExpensesList() {
+  Future<List<Expense>> getExpensesList() async {
     List<Expense> allExpenses = trip.tripDetailModel.members
         .expand((member) => member.expenses)
         .toList();
-    expensesList.assignAll(allExpenses);
+    return allExpenses;
   }
 
 }

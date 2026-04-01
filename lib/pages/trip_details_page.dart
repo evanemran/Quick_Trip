@@ -276,7 +276,7 @@ class TripDetailsPage extends GetView<TripDetailsController> {
                       horizontalTitleGap: 8,
                       minLeadingWidth: 0,
                       onTap: () {
-                        Get.toNamed(menu.route);
+                        Get.toNamed(menu.route, arguments: controller.trip);
                       },
                       title: Text(menu.title, style: TextStyle(color: AppColors.black, fontSize: 14, fontWeight: FontWeight.bold),),
                       leading: Padding(
